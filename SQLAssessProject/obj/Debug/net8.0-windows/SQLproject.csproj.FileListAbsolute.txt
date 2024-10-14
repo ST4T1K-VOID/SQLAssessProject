@@ -1,0 +1,5 @@
+C:\Users\Maddie\source\repos\SQLproject\obj\Debug\net8.0-windows\SQLproject.csproj.AssemblyReference.cache
+C:\Users\Maddie\source\repos\SQLproject\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Maddie\source\repos\SQLproject\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Maddie\source\repos\SQLproject\obj\Debug\net8.0-windows\SQLproject_MarkupCompile.cache
+C:\Users\Maddie\source\repos\SQLproject\obj\Debug\net8.0-windows\SQLproject_MarkupCompile.lref
