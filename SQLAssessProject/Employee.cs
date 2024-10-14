@@ -11,16 +11,33 @@ namespace SQLproject
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public DateOnly DateOfBirth { get; set; }
         public int GrossSalary { get; set; }
-        public int  BranchID { get; set; }
-
-        public Employee(int iD, string firstName, string lastName, int grossSalary, int branchID)
+        public int BranchID { get; set; }
+        public int SupervisorID { get; set; } = 0;
+        
+        public Employee(int employeeID, string firstName, string lastName, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID)
         {
-            ID = iD;
+            ID = employeeID;
             FirstName = firstName;
             LastName = lastName;
+            DateOfBirth = dateOfBirth;
             GrossSalary = grossSalary;
+            SupervisorID = supervisorID;
             BranchID = branchID;
+        }
+
+        public override string ToString()
+        {
+
+            string stringID = ID.ToString();
+            string firstName = FirstName;
+            string lastName = LastName;
+            string stringSalary = GrossSalary.ToString();
+            string stringBranch = BranchID.ToString();
+            string stringSupervisor = SupervisorID.ToString();
+
+            return $"{firstName}  {lastName}  {stringID}  ${stringSalary}  {stringBranch}  {stringSupervisor}";
         }
     }
 }

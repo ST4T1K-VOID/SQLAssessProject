@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,27 +15,16 @@ namespace SQLproject
 
         public DataService()
         {
-            AddEmployee(101, "Jane", "Bane", 100, 2);
-            AddEmployee(102, "Smelly", "SR", 100000000, 1);
-            AddEmployee(103, "Bob", "Builer", 70200, 1);
-            AddEmployee(104, "Poopy", "Joe", 1, 0);
-            AddEmployee(105, "Rae", "Summers", 56000, 3);
-        }
-
-        public enum updateFilter
-        {
-            employeeID = 0,
-            firstName = 1,
-            lastName = 2,
-            salary = 3,
-            branchID = 4,
-        }
-
-        updateFilter filter = new updateFilter();
+            AddEmployee("Jane", "Jane", 100, 2);
+            AddEmployee("Smelly", "SR", 100000000, 1, 1);
+            AddEmployee("Bob", "T Builder", 70200, 1, 1);
+            AddEmployee("Poopy", "Joe", 1, 0, 1);
+        }   
 
         public List<Employee> GetEmployees()
         {
-            return employees;
+            List<Employee> employeesList = employees;
+            return employeesList;
         }
 
         public List<Employee> FindEmployees()
@@ -42,9 +32,19 @@ namespace SQLproject
             return employees;
         }
 
-        public void AddEmployee(int employeeID, string firstName, string lastName, int grossSalary, int branchID)
+        public bool AddEmployee(string firstName, string lastName, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID = 0)
         {
-            employees.Add(new Employee(employeeID, firstName, lastName, grossSalary, branchID));
+            int employeeID = (employees.Count + 1);
+
+            foreach (Employee employee in employees)
+            {
+                if ((employee.FirstName == firstName) && (employee.LastName == lastName))
+                {
+                    return false;
+                }
+            }
+            employees.Add(new Employee(employeeID, firstName, lastName, dateOfBirth, grossSalary, branchID, supervisorID));
+            return true;
         }
 
         public bool RemoveEmployee(Employee targetEmployee)
@@ -60,21 +60,10 @@ namespace SQLproject
             return false;
         }
 
-        //public void UpdateEmployee(updateFilter filter, Employee targetEmployee)
-        //{
+        public void UpdateEmployee(Employee targetEmployee, Employee updatedInfoEmployee)
+        {
             
-
-
-
-
-        //    int castFilter = (int)filter;
-
-        //    switch (castFilter)
-        //    {
-        //        case 0:
-        //            var newInfo = 
-        //    }
-        //}
+        }
 
         
     }
