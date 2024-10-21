@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SQLproject"
         mc:Ignorable="d"
-        Title="UpdateEmployeeWindow" Height="450" Width="800">
+        Title="UpdateEmployeeWindow" Height="450" Width="800" MinHeight="500" MinWidth="900">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -19,21 +19,21 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" Margin="50,0">
             <Label Content="First Name" HorizontalContentAlignment="Left" FontWeight="Black"/>
-            <TextBox x:Name="textbox_FirstName" Text="AAA" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
+            <TextBox x:Name="textbox_FirstName" Text="" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
             <Label Content="Last Name" HorizontalContentAlignment="Left" FontWeight="Black"/>
-            <TextBox x:Name="textbox_LastName" Text="AA" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
+            <TextBox x:Name="textbox_LastName" Text="" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
             <Label Content="DATE OF BIRTH" HorizontalContentAlignment="Left" FontWeight="Black"/>
             <DatePicker x:Name="datebox_DOB" Height="30"/>
             <Label Content="SALARY" HorizontalContentAlignment="Left" FontWeight="Black"/>
-            <TextBox x:Name="textbox_Salary" Text="AA" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
+            <TextBox x:Name="textbox_Salary" Text="" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
             <Label Content="BRANCH ID" HorizontalContentAlignment="Left" FontWeight="Black"/>
-            <TextBox x:Name="textbox_BranchID" Text="AAA" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
+            <TextBox x:Name="textbox_BranchID" Text="" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
             <Label Content="SUPERVISOR ID" HorizontalContentAlignment="Left" FontWeight="Black"/>
-            <TextBox x:Name="textbox_SupervisorID" Text="AAA" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
+            <TextBox x:Name="textbox_SupervisorID" Text="" Height="30" VerticalContentAlignment="Center" FontSize="16"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="button_Confirm" Content="CONFIRM" Width="180" Height="55" Margin="0,0,20,0" FontWeight="Black" FontSize="18"/>
-            <Button x:Name="button_Cancel" Content="CANCEL" Width="180" Height="55" FontWeight="Black" FontSize="18"/>
+            <Button x:Name="button_Confirm" Content="CONFIRM" Width="167" Height="33" Margin="0,0,20,0" FontWeight="Black" FontSize="18" Click="button_Confirm_Click"/>
+            <Button x:Name="button_Cancel" Content="CANCEL" Width="167" Height="33" FontWeight="Black" FontSize="18" Click="button_Cancel_Click"/>
         </StackPanel>
     </Grid>
 </Window>

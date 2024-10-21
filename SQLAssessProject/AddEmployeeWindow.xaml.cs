@@ -22,6 +22,7 @@ namespace SQLproject
         public AddEmployeeWindow()
         {
             InitializeComponent();
+            combo_gender.ItemsSource = Enum.GetValues(typeof(GenderEnum));
         }
     }
 }

@@ -9,16 +9,12 @@ using System.Threading.Tasks;
 
 namespace SQLproject
 {
-    class DataService
+    public class DataService
     {
         private List<Employee> employees = new List<Employee>();
 
         public DataService()
         {
-            AddEmployee("Jane", "Jane", 100, 2);
-            AddEmployee("Smelly", "SR", 100000000, 1, 1);
-            AddEmployee("Bob", "T Builder", 70200, 1, 1);
-            AddEmployee("Poopy", "Joe", 1, 0, 1);
         }   
 
         public List<Employee> GetEmployees()
@@ -27,24 +23,49 @@ namespace SQLproject
             return employeesList;
         }
 
-        public List<Employee> FindEmployees()
+        public List<Employee> FindEmployees(string firstName = null, string Lastname = null)
         {
-            return employees;
+            List<Employee> filteredEmployees = new List<Employee>();
+            if (firstName == null && Lastname == null)
+            {
+                return employees;
+            }
+            else if (firstName != null && Lastname == null)
+            {
+                foreach (Employee employee in employees)
+                {
+                    if (employee.FirstName == firstName)
+                    {
+                        filteredEmployees.Add(employee);
+                    }
+                }
+            }
+            else if (firstName == null && Lastname != null)
+            {
+                foreach(Employee employee in employees)
+                {
+                    if (employee.LastName == Lastname)
+                    {
+                        filteredEmployees.Add(employee);
+                    }
+                }
+            }
+            else //firstname && lastname != Null
+            {
+                foreach (Employee employee in employees)
+                {
+                    if (employee.FirstName == firstName && employee.LastName == Lastname)
+                    {
+                        filteredEmployees.Add(employee);
+                    }
+                }
+            }
+            return filteredEmployees;
         }
 
         public bool AddEmployee(string firstName, string lastName, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID = 0)
         {
-            int employeeID = (employees.Count + 1);
-
-            foreach (Employee employee in employees)
-            {
-                if ((employee.FirstName == firstName) && (employee.LastName == lastName))
-                {
-                    return false;
-                }
-            }
-            employees.Add(new Employee(employeeID, firstName, lastName, dateOfBirth, grossSalary, branchID, supervisorID));
-            return true;
+            return false;
         }
 
         public bool RemoveEmployee(Employee targetEmployee)
@@ -60,11 +81,15 @@ namespace SQLproject
             return false;
         }
 
-        public void UpdateEmployee(Employee targetEmployee, Employee updatedInfoEmployee)
+        public bool UpdateEmployee(Employee targetEmployee, Employee updatedInfoEmployee)
         {
-            
+            if (employees.Contains(targetEmployee) == false)
+            {
+                return false;
+            }
+            int index = employees.IndexOf(targetEmployee);
+            employees[index] = updatedInfoEmployee;
+            return true;
         }
-
-        
     }
 }

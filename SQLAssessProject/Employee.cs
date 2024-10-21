@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace SQLproject
 {
-    internal class Employee
+    public class Employee
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public GenderEnum Gender { get; set; }
         public DateOnly DateOfBirth { get; set; }
+
+        public DateTime DateCreated = DateTime.Now;
         public int GrossSalary { get; set; }
         public int BranchID { get; set; }
         public int SupervisorID { get; set; } = 0;
         
-        public Employee(int employeeID, string firstName, string lastName, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID)
+        public Employee(int employeeID, string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID)
         {
             ID = employeeID;
             FirstName = firstName;
             LastName = lastName;
+            Gender = gender;
             DateOfBirth = dateOfBirth;
             GrossSalary = grossSalary;
             SupervisorID = supervisorID;
@@ -31,13 +35,16 @@ namespace SQLproject
         {
 
             string stringID = ID.ToString();
-            string firstName = FirstName;
-            string lastName = LastName;
+            string birthString = DateOfBirth.ToString("yyyy/mm/dd");
             string stringSalary = GrossSalary.ToString();
-            string stringBranch = BranchID.ToString();
-            string stringSupervisor = SupervisorID.ToString();
 
-            return $"{firstName}  {lastName}  {stringID}  ${stringSalary}  {stringBranch}  {stringSupervisor}";
+            return $"{stringID} {FirstName}{LastName} {Gender} | {birthString} | {stringSalary}";
         }
+    }
+    public enum GenderEnum
+    {
+        Male = 'M',
+        Female = 'F',
+        Other = 'O'
     }
 }

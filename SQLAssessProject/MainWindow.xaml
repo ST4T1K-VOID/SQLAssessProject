@@ -31,17 +31,23 @@
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical">
             <Label Content="NAME" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                <TextBox x:Name="textbox_FirstName" Text="PLACEHOLDER" FontSize="22" Width="300" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center" IsReadOnly="True"/>
-                <TextBox x:Name="textbox_LastName" Text="PLACEHOLDER" FontSize="22" Width="300" Height="40" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                <TextBox x:Name="textbox_FirstName" Text="" FontSize="22" Width="300" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                <TextBox x:Name="textbox_LastName" Text="" FontSize="22" Width="300" Height="40" VerticalContentAlignment="Center" IsReadOnly="True"/>
             </StackPanel>
-            <Label Content="ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_EmployeeID" Text="PLACEHOLDER" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-            <Label Content="SALARY" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_Salary" Text="PLACEHOLDER" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="GENDER" FontWeight="Black" FontSize="22" Margin="0,0,65,0"/>
+                <Label Content="ID" Width="177" FontWeight="Black" FontSize="22"/>
+                <Label Content="SALARY" Width="177" FontWeight="Black" Margin="-10,0,0,0" FontSize="22"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Width="150" Margin="0,0,15,0"/>
+                <TextBox x:Name="textbox_EmployeeID" Text="" FontSize="22" Width="150" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="textbox_Salary" Text="" FontSize="22" Width="285" Height="40" VerticalContentAlignment="Center"/>
+            </StackPanel>
             <Label Content="BRANCH ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_BranchID" Text="PLACEHOLDER" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox x:Name="textbox_BranchID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
             <Label Content="SUPERVISOR ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_SupervisorID" Text="PLACEHOLDER" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox x:Name="textbox_SupervisorID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">

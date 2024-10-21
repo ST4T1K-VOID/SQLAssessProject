@@ -53,6 +53,11 @@ namespace SQLproject
 
         private void button_UpdateEmployee_Click(object sender, RoutedEventArgs e)
         {
+            if (list_employees.SelectedItem == null)
+            {
+                return;
+            }
+            Employee selectedEmployee = list_employees.SelectedItem as Employee;
             UpdateEmployeeWindow updateEmployeeWindow = new UpdateEmployeeWindow();
             updateEmployeeWindow.Show();
         }
