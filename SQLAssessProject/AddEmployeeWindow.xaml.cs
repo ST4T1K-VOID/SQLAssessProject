@@ -27,6 +27,7 @@ namespace SQLproject
 
         private void button_cancel_Click(object sender, RoutedEventArgs e)
         {
+            
             this.Close();
         }
     }

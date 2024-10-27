@@ -40,16 +40,16 @@
                 <Label Content="SALARY" Width="177" FontWeight="Black" Margin="-10,0,0,0" FontSize="22"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBox Width="150" Margin="0,0,15,0"/>
-                <TextBox x:Name="textbox_EmployeeID" Text="" FontSize="22" Width="150" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center"/>
-                <TextBox x:Name="textbox_Salary" Text="" FontSize="22" Width="285" Height="40" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="textbox_gender" Text="" FontSize="22" Width="150" Margin="0,0,15,0" Height="40" VerticalAlignment="Center" IsReadOnly="True" Focusable="False"/>
+                <TextBox x:Name="textbox_EmployeeID" Text="" FontSize="22" Width="150" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center" IsReadOnly="True" Focusable="False"/>
+                <TextBox x:Name="textbox_Salary" Text="" FontSize="22" Width="285" Height="40" VerticalContentAlignment="Center" IsReadOnly="True" Focusable="False"/>
             </StackPanel>
             <Label Content="BRANCH ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_BranchID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox x:Name="textbox_BranchID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False"/>
             <Label Content="SUPERVISOR ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_SupervisorID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox x:Name="textbox_SupervisorID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False"/>
             <Label Content="DATE OF BIRTH" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_dateOfBirth" Text="" FontSize="22" Width="310" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBox x:Name="textbox_dateOfBirth" Text="" FontSize="22" Width="310" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">

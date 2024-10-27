@@ -15,7 +15,7 @@ namespace SQLproject
 
         public DataService()
         {
-            AddEmployee("steve", "beeve", GenderEnum.Other, DateOnly.Parse("12/12/1999"), 120000, 1, 1 );
+            AddEmployee("steve", "beeve", GenderEnum.M, DateOnly.Parse("12/12/1999"), 120000, 1, 1 );
         }   
         public List<Employee> GetEmployees()
         {

@@ -37,14 +37,28 @@ namespace SQLproject
             string stringID = ID.ToString();
             string birthString = DateOfBirth.ToString("yyyy/MM/dd");
             string stringSalary = GrossSalary.ToString();
+            string gender;
+            if (Gender == GenderEnum.M)
+            {
+                gender = "Male";
+            }
+            else if (Gender == GenderEnum.F)
+            {
+                gender = "Female";
+            }
+            else
+            {
+                gender = "Other";
+            }
 
-            return $"{stringID} {FirstName}{LastName} {Gender} | {birthString} | {stringSalary}";
+            return $"{stringID} {FirstName} {LastName} | {gender} | {birthString} | {stringSalary}";
         }
     }
     public enum GenderEnum
     {
-        Male = 'M',
-        Female = 'F',
-        Other = 'O'
+        M = '0',
+        F = '1',
+        O = '2'
     }
+    
 }

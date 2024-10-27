@@ -22,16 +22,18 @@ namespace SQLproject
         public UpdateEmployeeWindow(Employee selectedEmployee)
         {
             InitializeComponent();
-            combo_gender.ItemsSource = Enum.GetValues(typeof(GenderEnum));
+            combo_gender.ItemsSource = Enum.GetNames(typeof(GenderEnum));
             textbox_firstName.Text = selectedEmployee.FirstName;
             textbox_lastName.Text = selectedEmployee.LastName;
-            //combo_gender.SelectedIndex = Enum.GetName(selectedEmployee.Gender).ToString();
+            combo_gender.Text = selectedEmployee.Gender.ToString();
             textbox_salary.Text = selectedEmployee.GrossSalary.ToString();
-
+            textbox_branchID.Text = selectedEmployee.BranchID.ToString();
+            textbox_supervisorID.Text = selectedEmployee.SupervisorID.ToString();
         }
 
         private void button_cancel_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = false;
             this.Close();
         }
 
@@ -41,7 +43,15 @@ namespace SQLproject
             {
                 MessageBox.Show("First and last name can only contain letters.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-            //bool checkResult = textbox_firstName.Text.All(char.IsLetter);
+            else if (!int.TryParse(textbox_salary.Text, out int result) || !int.TryParse(textbox_supervisorID.Text, out int result1) || !int.TryParse(textbox_supervisorID.Text, out int result2))
+            {
+                MessageBox.Show("salary and IDs can not contain letters or decimals", "EROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                DialogResult = true;
+                this.Close();
+            }
         }
     }
 }
