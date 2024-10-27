@@ -24,5 +24,10 @@ namespace SQLproject
             InitializeComponent();
             combo_gender.ItemsSource = Enum.GetValues(typeof(GenderEnum));
         }
+
+        private void button_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

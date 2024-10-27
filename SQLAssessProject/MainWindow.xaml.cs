@@ -35,20 +35,22 @@ namespace SQLproject
             Employee? selectedEmployee = list_employees.SelectedItem as Employee;
             if (selectedEmployee == null)
             {
-                
+                return;
             }
             textbox_FirstName.Text = selectedEmployee.FirstName;
             textbox_LastName.Text = selectedEmployee.LastName;
+            textbox_gender.Text = selectedEmployee.Gender;
             textbox_EmployeeID.Text = selectedEmployee.ID.ToString();
             textbox_Salary.Text = selectedEmployee.GrossSalary.ToString();
             textbox_BranchID.Text = selectedEmployee.BranchID.ToString();
             textbox_SupervisorID.Text = selectedEmployee.SupervisorID.ToString();
+            textbox_dateOfBirth.Text = selectedEmployee.DateOfBirth.ToString();
         }
 
         private void button_AddEmployee_Click(object sender, RoutedEventArgs e)
         {
             AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow();
-            addEmployeeWindow.Show();
+            addEmployeeWindow.ShowDialog();
         }
 
         private void button_UpdateEmployee_Click(object sender, RoutedEventArgs e)
@@ -58,8 +60,8 @@ namespace SQLproject
                 return;
             }
             Employee selectedEmployee = list_employees.SelectedItem as Employee;
-            UpdateEmployeeWindow updateEmployeeWindow = new UpdateEmployeeWindow();
-            updateEmployeeWindow.Show();
+            UpdateEmployeeWindow updateEmployeeWindow = new UpdateEmployeeWindow(list_employees.SelectedItem as Employee);
+            updateEmployeeWindow.ShowDialog();
         }
     }
 }

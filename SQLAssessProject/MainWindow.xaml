@@ -48,6 +48,8 @@
             <TextBox x:Name="textbox_BranchID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
             <Label Content="SUPERVISOR ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
             <TextBox x:Name="textbox_SupervisorID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+            <Label Content="DATE OF BIRTH" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
+            <TextBox x:Name="textbox_dateOfBirth" Text="" FontSize="22" Width="310" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">

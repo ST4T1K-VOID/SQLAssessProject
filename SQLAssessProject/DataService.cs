@@ -15,14 +15,21 @@ namespace SQLproject
 
         public DataService()
         {
+            AddEmployee("steve", "beeve", GenderEnum.Other, DateOnly.Parse("12/12/1999"), 120000, 1, 1 );
         }   
-
         public List<Employee> GetEmployees()
         {
             List<Employee> employeesList = employees;
             return employeesList;
         }
-
+        /// <summary>
+        /// Searches for employees with a specififed first or last name or both.
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="Lastname"></param>
+        /// <returns>
+        /// List: of all employees matching the specified parameters.
+        /// </returns>
         public List<Employee> FindEmployees(string firstName = null, string Lastname = null)
         {
             List<Employee> filteredEmployees = new List<Employee>();
@@ -62,12 +69,40 @@ namespace SQLproject
             }
             return filteredEmployees;
         }
-
-        public bool AddEmployee(string firstName, string lastName, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID = 0)
+        /// <summary>
+        /// Adds an employee
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="gender"></param>
+        /// <param name="dateOfBirth"></param>
+        /// <param name="grossSalary"></param>
+        /// <param name="branchID"></param>
+        /// <param name="supervisorID"></param>
+        /// <returns>
+        /// False: if an employee with the same first and last name is found <br/>
+        /// True: if addition was successful
+        /// </returns>
+        public bool AddEmployee(string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID)
         {
-            return false;
+            foreach (Employee employee in employees)
+            {
+                if (employee.FirstName == firstName && employee.LastName == lastName)
+                {
+                    return false;
+                }
+            }
+            employees.Add(new Employee(firstName, lastName, gender, dateOfBirth, grossSalary, branchID, supervisorID));
+            return true;
         }
-
+        /// <summary>
+        /// Removes selected employee
+        /// </summary>
+        /// <param name="targetEmployee"></param>
+        /// <returns>
+        /// False: if targeted employee could not be found <br/>
+        /// True: if removal was successful
+        /// </returns>
         public bool RemoveEmployee(Employee targetEmployee)
         {
             foreach (Employee employee in employees)
@@ -81,6 +116,15 @@ namespace SQLproject
             return false;
         }
 
+        /// <summary>
+        /// replaces selected employee with an updated version of selected employee.
+        /// </summary>
+        /// <param name="targetEmployee"></param>
+        /// <param name="updatedInfoEmployee"></param>
+        /// <returns>
+        /// False: if targeted employee doesn't exist <br/>
+        /// True: if updating was successful
+        /// </returns>
         public bool UpdateEmployee(Employee targetEmployee, Employee updatedInfoEmployee)
         {
             if (employees.Contains(targetEmployee) == false)

@@ -1,30 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\",
+  "WorkspaceRootPath": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\20122886\\source\\repos\\sqlassessproject\\sqlassessproject\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\20122886\\source\\repos\\sqlassessproject\\sqlassessproject\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\maddie\\source\\repos\\sqlassessproject\\sqlassessproject\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\20122886\\source\\repos\\sqlassessproject\\sqlassessproject\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\maddie\\source\\repos\\sqlassessproject\\sqlassessproject\\dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:dataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\20122886\\source\\repos\\sqlassessproject\\sqlassessproject\\updateemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:updateemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\20122886\\source\\repos\\sqlassessproject\\sqlassessproject\\addemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\maddie\\source\\repos\\sqlassessproject\\sqlassessproject\\addemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:addemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\20122886\\source\\repos\\sqlassessproject\\sqlassessproject\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\maddie\\source\\repos\\sqlassessproject\\sqlassessproject\\updateemployeewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:updateemployeewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\maddie\\source\\repos\\sqlassessproject\\sqlassessproject\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\maddie\\source\\repos\\sqlassessproject\\sqlassessproject\\updateemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:updateemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\maddie\\source\\repos\\sqlassessproject\\sqlassessproject\\addemployeewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:addemployeewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|c:\\users\\maddie\\source\\repos\\sqlassessproject\\sqlassessproject\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{513B9D8F-FCBC-4478-BC4C-D14D97931125}|SQLproject.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,11 +50,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "UpdateEmployeeWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\UpdateEmployeeWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\UpdateEmployeeWindow.xaml",
               "RelativeDocumentMoniker": "UpdateEmployeeWindow.xaml",
-              "ToolTip": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\UpdateEmployeeWindow.xaml",
+              "ToolTip": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\UpdateEmployeeWindow.xaml",
               "RelativeToolTip": "UpdateEmployeeWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-21T03:31:34.633Z",
@@ -54,13 +62,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "AddEmployeeWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\AddEmployeeWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AddEmployeeWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\AddEmployeeWindow.xaml.cs",
+              "RelativeToolTip": "AddEmployeeWindow.xaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAmwCAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T07:11:33.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwCUAAAAQAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T03:31:34.659Z",
               "EditorCaption": ""
@@ -68,10 +89,36 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\Employee.cs",
+              "RelativeDocumentMoniker": "Employee.cs",
+              "ToolTip": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\Employee.cs",
+              "RelativeToolTip": "Employee.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAA8wCQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T03:31:34.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdateEmployeeWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\UpdateEmployeeWindow.xaml.cs",
+              "RelativeDocumentMoniker": "UpdateEmployeeWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\UpdateEmployeeWindow.xaml.cs",
+              "RelativeToolTip": "UpdateEmployeeWindow.xaml.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACcAAABoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T07:12:38.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AddEmployeeWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\AddEmployeeWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\AddEmployeeWindow.xaml",
               "RelativeDocumentMoniker": "AddEmployeeWindow.xaml",
-              "ToolTip": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\AddEmployeeWindow.xaml",
+              "ToolTip": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\AddEmployeeWindow.xaml",
               "RelativeToolTip": "AddEmployeeWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-21T03:31:34.656Z",
@@ -79,36 +126,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\Employee.cs",
-              "RelativeDocumentMoniker": "Employee.cs",
-              "ToolTip": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\Employee.cs",
-              "RelativeToolTip": "Employee.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABcAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T03:31:34.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DataService.cs",
-              "DocumentMoniker": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\DataService.cs",
+              "DocumentMoniker": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\DataService.cs",
               "RelativeDocumentMoniker": "DataService.cs",
-              "ToolTip": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\DataService.cs",
+              "ToolTip": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\DataService.cs",
               "RelativeToolTip": "DataService.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABQAAAAxAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T03:31:34.663Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\20122886\\source\\repos\\SQLAssessProject\\SQLAssessProject\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Maddie\\source\\repos\\SQLAssessProject\\SQLAssessProject\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-21T03:31:34.665Z",

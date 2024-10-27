@@ -19,9 +19,9 @@ namespace SQLproject
         public int BranchID { get; set; }
         public int SupervisorID { get; set; } = 0;
         
-        public Employee(int employeeID, string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID)
+        public Employee(string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID)
         {
-            ID = employeeID;
+            ID = 9999;
             FirstName = firstName;
             LastName = lastName;
             Gender = gender;
@@ -35,7 +35,7 @@ namespace SQLproject
         {
 
             string stringID = ID.ToString();
-            string birthString = DateOfBirth.ToString("yyyy/mm/dd");
+            string birthString = DateOfBirth.ToString("yyyy/MM/dd");
             string stringSalary = GrossSalary.ToString();
 
             return $"{stringID} {FirstName}{LastName} {Gender} | {birthString} | {stringSalary}";

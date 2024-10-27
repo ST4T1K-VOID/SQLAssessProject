@@ -19,20 +19,29 @@ namespace SQLproject
     /// </summary>
     public partial class UpdateEmployeeWindow : Window
     {
-        public UpdateEmployeeWindow()
+        public UpdateEmployeeWindow(Employee selectedEmployee)
         {
             InitializeComponent();
+            combo_gender.ItemsSource = Enum.GetValues(typeof(GenderEnum));
+            textbox_firstName.Text = selectedEmployee.FirstName;
+            textbox_lastName.Text = selectedEmployee.LastName;
+            //combo_gender.SelectedIndex = Enum.GetName(selectedEmployee.Gender).ToString();
+            textbox_salary.Text = selectedEmployee.GrossSalary.ToString();
 
         }
 
-        private void button_Cancel_Click(object sender, RoutedEventArgs e)
+        private void button_cancel_Click(object sender, RoutedEventArgs e)
         {
-            UpdateEmployeeWindow.GetWindow(this).Close();
+            this.Close();
         }
 
-        private void button_Confirm_Click(object sender, RoutedEventArgs e)
+        private void button_confirm_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (!textbox_firstName.Text.All(char.IsLetter) || !textbox_lastName.Text.All(char.IsLetter))
+            {
+                MessageBox.Show("First and last name can only contain letters.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            //bool checkResult = textbox_firstName.Text.All(char.IsLetter);
         }
     }
 }
