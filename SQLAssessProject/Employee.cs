@@ -8,27 +8,38 @@ namespace SQLproject
 {
     public class Employee
     {
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public GenderEnum Gender { get; set; }
         public DateOnly DateOfBirth { get; set; }
-
-        public DateTime DateCreated = DateTime.Now;
         public int GrossSalary { get; set; }
         public int BranchID { get; set; }
         public int SupervisorID { get; set; } = 0;
-        
-        public Employee(string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID)
+        public DateTime DateCreated { get; set; } = DateTime.Now;
+
+        public Employee(int id, string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int salary, int branchID, int supervisorID)
         {
-            ID = 9999;
+            ID = id;
             FirstName = firstName;
             LastName = lastName;
             Gender = gender;
             DateOfBirth = dateOfBirth;
-            GrossSalary = grossSalary;
-            SupervisorID = supervisorID;
+            GrossSalary = salary;
             BranchID = branchID;
+            SupervisorID = supervisorID;
+
+        }
+
+        public Employee( string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int salary, int branchID, int supervisorID)
+        {   
+            FirstName = firstName;
+            LastName = lastName;
+            Gender = gender;
+            DateOfBirth = dateOfBirth;
+            GrossSalary = salary;
+            BranchID = branchID;
+            SupervisorID = supervisorID;
         }
 
         public override string ToString()
@@ -51,14 +62,14 @@ namespace SQLproject
                 gender = "Other";
             }
 
-            return $"{stringID} {FirstName} {LastName} | {gender} | {birthString} | {stringSalary}";
+            return $"{stringID} {FirstName} {LastName} | {gender} | {birthString} | ${stringSalary}";
         }
     }
     public enum GenderEnum
     {
-        M = '0',
-        F = '1',
-        O = '2'
+        M = 0,
+        F = 1,
+        O = 2
     }
     
 }

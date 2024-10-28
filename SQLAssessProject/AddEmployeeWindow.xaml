@@ -10,26 +10,26 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="553">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="Name:" FontWeight="Black"/>
-                <TextBox Width="150" Margin="10,0,0,0" Text="first name" VerticalAlignment="Center"/>
-                <TextBox Width="150" Margin="10,0,0,0" Text="last name" VerticalAlignment="Center"/>
+                <TextBox x:Name="textbox_firstName" Width="150" Margin="10,0,0,0" Text="first name" VerticalAlignment="Center"/>
+                <TextBox x:Name="textbox_lastName" Width="150" Margin="10,0,0,0" Text="last name" VerticalAlignment="Center"/>
                 <Label Content="Gender:" FontWeight="Black"/>
                 <ComboBox x:Name="combo_gender" Width="50" Height="20"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="Gross Salary:" FontWeight="Black"/>
-                <TextBox Width="110" Margin="10,0,0,0" Text="" VerticalAlignment="Center" />
+                <TextBox x:Name="textbox_salary" Width="110" Margin="10,0,0,0" Text="" VerticalAlignment="Center" />
                 <Label Content="D.O.B:" FontWeight="Black"/>
-                <DatePicker Width="149" Height="25"/>
+                <DatePicker x:Name="datepicker_dateOfBirth" Width="149" Height="25"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="Supervisor ID:" FontWeight="Black"/>
-                <TextBox Width="150" Margin="10,0,0,0" Text="" VerticalAlignment="Center"/>
+                <TextBox x:Name="textbox_supervisorID" Width="150" Margin="10,0,0,0" Text="" VerticalAlignment="Center"/>
                 <Label Content="Branch ID:" FontWeight="Black"/>
-                <TextBox Width="150" Margin="10,0,0,0" Text="" VerticalAlignment="Center"/>
+                <TextBox x:Name="textbox_branchID" Width="150" Margin="10,0,0,0" Text="" VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="button_confirm" Content="CONFIRM" Height="30" Width="80" FontWeight="Bold" Margin="0,15,0,0"/>
-                <Button x:Name="button_cancel" Content="CANCEL" Height="30" Width="80" FontWeight="Bold" Margin="10,15,0,0"/>
+                <Button x:Name="button_confirm" Content="CONFIRM" Height="30" Width="80" FontWeight="Bold" Margin="0,15,0,0" Click="button_confirm_Click"/>
+                <Button x:Name="button_cancel" Content="CANCEL" Height="30" Width="80" FontWeight="Bold" Margin="10,15,0,0" Click="button_cancel_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

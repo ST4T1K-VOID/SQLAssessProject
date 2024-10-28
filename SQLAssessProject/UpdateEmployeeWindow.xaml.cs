@@ -39,13 +39,20 @@ namespace SQLproject
 
         private void button_confirm_Click(object sender, RoutedEventArgs e)
         {
+            if (textbox_firstName.Text == string.Empty || textbox_lastName.Text == string.Empty || textbox_branchID.Text == string.Empty || textbox_salary.Text == string.Empty || textbox_supervisorID.Text == string.Empty)
+            {
+                MessageBox.Show("All fields are required to be filled", "Unfilled fields", MessageBoxButton.OK);
+                return;
+            }
             if (!textbox_firstName.Text.All(char.IsLetter) || !textbox_lastName.Text.All(char.IsLetter))
             {
                 MessageBox.Show("First and last name can only contain letters.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
             else if (!int.TryParse(textbox_salary.Text, out int result) || !int.TryParse(textbox_supervisorID.Text, out int result1) || !int.TryParse(textbox_supervisorID.Text, out int result2))
             {
-                MessageBox.Show("salary and IDs can not contain letters or decimals", "EROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("salary and IDs can not contain letters or decimals", "ERROR", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
             else
             {

@@ -55,9 +55,9 @@
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
             <Button x:Name="button_AddEmployee" Content="ADD EMPLOYEE" Width="250" Height="70" Margin="0,0,30,30" FontWeight="Black" FontSize="20" Click="button_AddEmployee_Click"/>
             <Button x:Name="button_UpdateEmployee" Content="UPDATE EMPLOYEE" Width="250" Height="70" Margin="0,0,30,30" FontWeight="Black" FontSize="20" Click="button_UpdateEmployee_Click"/>
-            <Button x:Name="button_RemoveEmployee" Content="REMOVE EMPLOYEE" Width="250" Height="70" Margin="0,0,0,30" FontWeight="Black" FontSize="20"/>
-
+            <Button x:Name="button_RemoveEmployee" Content="REMOVE EMPLOYEE" Width="250" Height="70" Margin="0,0,0,30" FontWeight="Black" FontSize="20" Click="button_RemoveEmployee_Click"/>
         </StackPanel>
 
+        <Button Grid.Column="3" Grid.Row="4" x:Name="button_refresh" Content="REFRESH" Margin="10,30" FontWeight="Black" FontSize="20 " Click="button_refresh_Click"/>
     </Grid>
 </Window>

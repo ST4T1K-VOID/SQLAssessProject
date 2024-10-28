@@ -11,15 +11,28 @@ namespace SQLproject
 {
     public class DataService
     {
+
         private List<Employee> employees = new List<Employee>();
+        private Connection databaseConnection = new Connection();
 
         public DataService()
         {
-            AddEmployee("steve", "beeve", GenderEnum.M, DateOnly.Parse("12/12/1999"), 120000, 1, 1 );
+            RefreshEmployees();
         }   
+
+        private void RefreshEmployees()
+        {
+            employees = databaseConnection.DatabaseGetEmployees();
+        }
+
+
+        /// <summary>
+        /// Returns list of employees
+        /// </summary>
+        /// <returns></returns>
         public List<Employee> GetEmployees()
         {
-            List<Employee> employeesList = employees;
+            List<Employee> employeesList = employees.ToList();
             return employeesList;
         }
         /// <summary>

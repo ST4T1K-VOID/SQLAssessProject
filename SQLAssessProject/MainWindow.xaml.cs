@@ -58,11 +58,27 @@ namespace SQLproject
                 textbox_gender.Text = "Other";
             }
         }
+        private void button_refresh_Click(object sender, RoutedEventArgs e)
+        {
+            ListEmployees();
+        }
 
+        //CRUD Methods
         private void button_AddEmployee_Click(object sender, RoutedEventArgs e)
         {
             AddEmployeeWindow addEmployeeWindow = new AddEmployeeWindow();
             addEmployeeWindow.ShowDialog();
+            if (addEmployeeWindow.DialogResult == true)
+            {
+                string tempFirstName = addEmployeeWindow.textbox_firstName.Text;
+                string tempLastName = addEmployeeWindow.textbox_lastName.Text;
+                int tempSalary = int.Parse(addEmployeeWindow.textbox_salary.Text);
+                int tempBranchID = int.Parse(addEmployeeWindow.textbox_branchID.Text);
+                int tempSupervisorID = int.Parse(addEmployeeWindow.textbox_supervisorID.Text);
+
+                Service.AddEmployee(tempFirstName, tempLastName, (GenderEnum)addEmployeeWindow.combo_gender.SelectedItem, DateOnly.Parse(addEmployeeWindow.datepicker_dateOfBirth.Text), tempSalary, tempBranchID, tempSupervisorID);
+                ListEmployees();
+            }
         }
 
         private void button_UpdateEmployee_Click(object sender, RoutedEventArgs e)
@@ -76,20 +92,46 @@ namespace SQLproject
             updateEmployeeWindow.ShowDialog();
             if (updateEmployeeWindow.DialogResult == true)
             {
-                Employee old_employee = list_employees.SelectedItem as Employee;
+                Employee oldEmployee = list_employees.SelectedItem as Employee;
                 string updatedFirstName = updateEmployeeWindow.textbox_firstName.Text;
                 string updatedLastName = updateEmployeeWindow.textbox_lastName.Text;
-                GenderEnum updatedGender = (GenderEnum) updateEmployeeWindow.combo_gender.SelectedIndex;
                 int updatedSalary = int.Parse(updateEmployeeWindow.textbox_salary.Text);
                 int updatedBranchID = int.Parse(updateEmployeeWindow.textbox_branchID.Text);
                 int updatedSupervisorID = int.Parse(updateEmployeeWindow.textbox_supervisorID.Text);
-                Employee updatedEmployee = new Employee(updatedFirstName, updatedLastName, updatedGender, old_employee.DateOfBirth, updatedSalary, updatedBranchID, updatedSupervisorID);
-                if (Service.UpdateEmployee(old_employee, updatedEmployee))
+                GenderEnum tempgender = (GenderEnum)updateEmployeeWindow.combo_gender.SelectedIndex;
+
+                Employee updatedEmployee = new Employee(updatedFirstName, updatedLastName, tempgender, oldEmployee.DateOfBirth, updatedSalary, updatedBranchID, updatedSupervisorID);
+                if (Service.UpdateEmployee(oldEmployee, updatedEmployee))
                 {
                     MessageBox.Show("Employee updated", "Successful Operation", MessageBoxButton.OK);
                     ListEmployees();
                 }
+                else
+                {
+                    MessageBox.Show("Employee under that name already exsists", "Unsuccessful Operation", MessageBoxButton.OK);
+                }
             }
         }
+
+        private void button_RemoveEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            if (list_employees.SelectedItem == null)
+            {
+                return;
+            }
+
+            var result = MessageBox.Show("Are you sure you want to remove an employee record", "Warning", MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK)
+            {
+                Service.RemoveEmployee(list_employees.SelectedItem as Employee);
+                ListEmployees();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+
     }
 }
