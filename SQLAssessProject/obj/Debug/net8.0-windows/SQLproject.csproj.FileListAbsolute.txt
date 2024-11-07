@@ -80,3 +80,4 @@ C:\Users\OBRIEM\source\repos\SQLAssessProject\SQLAssessProject\obj\Debug\net8.0-
 C:\Users\OBRIEM\source\repos\SQLAssessProject\SQLAssessProject\obj\Debug\net8.0-windows\SQLproject.pdb
 C:\Users\OBRIEM\source\repos\SQLAssessProject\SQLAssessProject\obj\Debug\net8.0-windows\SQLproject.genruntimeconfig.cache
 C:\Users\OBRIEM\source\repos\SQLAssessProject\SQLAssessProject\obj\Debug\net8.0-windows\ref\SQLproject.dll
+C:\Users\OBRIEM\source\repos\SQLAssessProject\SQLAssessProject\obj\Debug\net8.0-windows\App.baml

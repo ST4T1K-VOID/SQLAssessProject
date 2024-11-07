@@ -5,31 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SQLproject"
         mc:Ignorable="d"
-        Title="AddEmployeeWindow" Height="450" Width="800">
-    <Grid>
+        Title="AddEmployeeWindow" Height="300" Width="700">
+    <Grid Background="#FFEEF5FF">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="553">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Name:" FontWeight="Black"/>
-                <TextBox x:Name="textbox_firstName" Width="150" Margin="10,0,0,0" Text="first name" VerticalAlignment="Center"/>
-                <TextBox x:Name="textbox_lastName" Width="150" Margin="10,0,0,0" Text="last name" VerticalAlignment="Center"/>
-                <Label Content="Gender:" FontWeight="Black"/>
-                <ComboBox x:Name="combo_gender" Width="50" Height="20"/>
+                <Label Content="Name:" FontWeight="Black" Foreground="#FF03073E"/>
+                <TextBox x:Name="textbox_firstName" Width="150" Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="#FF1B5E75"/>
+                <TextBox x:Name="textbox_lastName" Width="150" Margin="10,0,0,0" VerticalAlignment="Center" BorderBrush="#FF1B5E75"/>
+                <Label Content="Gender:" FontWeight="Black" Foreground="#FF03073E"/>
+                <ComboBox x:Name="combo_gender" Width="50" Height="20" BorderBrush="#FF1B5E75">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFCADEED" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Gross Salary:" FontWeight="Black"/>
-                <TextBox x:Name="textbox_salary" Width="110" Margin="10,0,0,0" Text="" VerticalAlignment="Center" />
-                <Label Content="D.O.B:" FontWeight="Black"/>
-                <DatePicker x:Name="datepicker_dateOfBirth" Width="149" Height="25"/>
+                <Label Content="Gross Salary:" FontWeight="Black" Foreground="#FF03073E"/>
+                <TextBox x:Name="textbox_salary" Width="110" Margin="10,0,0,0" Text="" VerticalAlignment="Center" BorderBrush="#FF1B5E75" />
+                <Label Content="D.O.B:" FontWeight="Black" Foreground="#FF03073E"/>
+                <DatePicker x:Name="datepicker_dateOfBirth" Width="149" Height="25" Focusable="False">
+                    <DatePicker.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                            <GradientStop Color="#00846161"/>
+                            <GradientStop Color="#FF8399A9"/>
+                            <GradientStop Color="#00718597"/>
+                            <GradientStop Color="#00846161" Offset="1"/>
+                            <GradientStop Color="#008397A7"/>
+                        </LinearGradientBrush>
+                    </DatePicker.BorderBrush>
+                </DatePicker>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Supervisor ID:" FontWeight="Black"/>
-                <TextBox x:Name="textbox_supervisorID" Width="150" Margin="10,0,0,0" Text="" VerticalAlignment="Center"/>
-                <Label Content="Branch ID:" FontWeight="Black"/>
-                <TextBox x:Name="textbox_branchID" Width="150" Margin="10,0,0,0" Text="" VerticalAlignment="Center"/>
+                <Label Content="Supervisor ID:" FontWeight="Black" Foreground="#FF03073E"/>
+                <TextBox x:Name="textbox_supervisorID" Width="150" Margin="10,0,0,0" Text="" VerticalAlignment="Center" BorderBrush="#FF1B5E75"/>
+                <Label Content="Branch ID:" FontWeight="Black" Foreground="#FF03073E"/>
+                <TextBox x:Name="textbox_branchID" Width="150" Margin="10,0,0,0" Text="" VerticalAlignment="Center" BorderBrush="#FF1B5E75"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="button_confirm" Content="CONFIRM" Height="30" Width="80" FontWeight="Bold" Margin="0,15,0,0" Click="button_confirm_Click"/>
-                <Button x:Name="button_cancel" Content="CANCEL" Height="30" Width="80" FontWeight="Bold" Margin="10,15,0,0" Click="button_cancel_Click"/>
+                <Button x:Name="button_confirm" Content="CONFIRM" Height="30" Width="80" FontWeight="Bold" Margin="0,15,0,0" Click="button_confirm_Click" BorderBrush="#FF1B5E75" Background="#FFCADEED" >
+                    <Button.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF03073E" Offset="0.57"/>
+                            <GradientStop Color="#FF085EA0" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+                </Button>
+                <Button x:Name="button_cancel" Content="CANCEL" Height="30" Width="80" FontWeight="Bold" Margin="10,15,0,0" Click="button_cancel_Click" BorderBrush="#FF1B5E75" Background="#FFCADEED">
+                    <Button.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF03073E" Offset="0.57"/>
+                            <GradientStop Color="#FF085EA0" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>

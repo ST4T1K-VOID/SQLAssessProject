@@ -19,13 +19,10 @@ namespace SQLproject
         {
             RefreshEmployees();
         }   
-
         private void RefreshEmployees()
         {
             employees = databaseConnection.DatabaseGetEmployees();
         }
-
-
         /// <summary>
         /// Returns list of employees
         /// </summary>
@@ -43,7 +40,7 @@ namespace SQLproject
         /// <returns>
         /// List: of all employees matching the specified parameters.
         /// </returns>
-        public List<Employee> FindEmployees(string firstName = null, string Lastname = null)
+        public List<Employee> FindEmployees(string? firstName = null, string? Lastname = null)
         {
             List<Employee> filteredEmployees = new List<Employee>();
             if (firstName == null && Lastname == null)
@@ -98,14 +95,19 @@ namespace SQLproject
         /// </returns>
         public bool AddEmployee(string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int grossSalary, int branchID, int supervisorID)
         {
-            foreach (Employee employee in employees)
+            Employee tempEmployee =  new Employee(firstName, lastName, gender, dateOfBirth, grossSalary, branchID, supervisorID);
+            int employeeID = 0;
+
+            try
             {
-                if (employee.FirstName == firstName && employee.LastName == lastName)
-                {
-                    return false;
-                }
+                employeeID = databaseConnection.DatabaseAddEmployee(tempEmployee);
             }
-            employees.Add(new Employee(firstName, lastName, gender, dateOfBirth, grossSalary, branchID, supervisorID));
+            catch
+            {
+                return false;
+            }
+
+            employees.Add(new Employee(employeeID, firstName, lastName, gender, dateOfBirth, grossSalary, branchID, supervisorID));
             return true;
         }
         /// <summary>
@@ -118,17 +120,18 @@ namespace SQLproject
         /// </returns>
         public bool RemoveEmployee(Employee targetEmployee)
         {
-            foreach (Employee employee in employees)
+            try
             {
-                if (employee.ID == targetEmployee.ID)
-                {
-                    employees.Remove(employee);
-                    return true;
-                }
+                databaseConnection.DatabaseDeleteEmployee(targetEmployee);
             }
-            return false;
-        }
+            catch 
+            {
+                return false; 
+            }
 
+            RefreshEmployees();
+            return true;
+        }
         /// <summary>
         /// replaces selected employee with an updated version of selected employee.
         /// </summary>
@@ -148,5 +151,7 @@ namespace SQLproject
             employees[index] = updatedInfoEmployee;
             return true;
         }
+
+       
     }
 }

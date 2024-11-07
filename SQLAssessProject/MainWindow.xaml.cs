@@ -76,7 +76,14 @@ namespace SQLproject
                 int tempBranchID = int.Parse(addEmployeeWindow.textbox_branchID.Text);
                 int tempSupervisorID = int.Parse(addEmployeeWindow.textbox_supervisorID.Text);
 
-                Service.AddEmployee(tempFirstName, tempLastName, (GenderEnum)addEmployeeWindow.combo_gender.SelectedItem, DateOnly.Parse(addEmployeeWindow.datepicker_dateOfBirth.Text), tempSalary, tempBranchID, tempSupervisorID);
+                if (Service.AddEmployee(tempFirstName, tempLastName, (GenderEnum)addEmployeeWindow.combo_gender.SelectedItem, DateOnly.Parse(addEmployeeWindow.datepicker_dateOfBirth.Text), tempSalary, tempBranchID, tempSupervisorID))
+                {
+                    MessageBox.Show("Employee added", "Operation successful", MessageBoxButton.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Employee could not be added", "Operation unsuccessful", MessageBoxButton.OK);
+                }
                 ListEmployees();
             }
         }
@@ -106,10 +113,10 @@ namespace SQLproject
                     MessageBox.Show("Employee updated", "Successful Operation", MessageBoxButton.OK);
                     ListEmployees();
                 }
-                else
-                {
-                    MessageBox.Show("Employee under that name already exsists", "Unsuccessful Operation", MessageBoxButton.OK);
-                }
+                //else
+                //{
+                //    MessageBox.Show("Employee under that name already exsists", "Unsuccessful Operation", MessageBoxButton.OK);
+                //}
             }
         }
 
@@ -123,12 +130,23 @@ namespace SQLproject
             var result = MessageBox.Show("Are you sure you want to remove an employee record", "Warning", MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.OK)
             {
-                Service.RemoveEmployee(list_employees.SelectedItem as Employee);
-                ListEmployees();
-            }
-            else
-            {
-                return;
+                if (Service.RemoveEmployee(list_employees.SelectedItem as Employee))
+                {
+                    MessageBox.Show("Employee removed", "Operation successful", MessageBoxButton.OK);
+                    ListEmployees();
+                    textbox_FirstName.Text = null;
+                    textbox_LastName.Text = null;
+                    textbox_EmployeeID.Text = null;
+                    textbox_Salary.Text = null;
+                    textbox_BranchID.Text = null;
+                    textbox_SupervisorID.Text = null;
+                    textbox_dateOfBirth.Text = null;
+                    textbox_gender.Text = null;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to remove employee", "operation unsuccessful", MessageBoxButton.OK);
+                }
             }
         }
 

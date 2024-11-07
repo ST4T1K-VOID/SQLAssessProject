@@ -18,6 +18,16 @@ namespace SQLproject
         public int SupervisorID { get; set; } = 0;
         public DateTime DateCreated { get; set; } = DateTime.Now;
 
+        public Employee(string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int salary, int branchID, int supervisorID)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Gender = gender;
+            DateOfBirth = dateOfBirth;
+            GrossSalary = salary;
+            BranchID = branchID;
+            SupervisorID = supervisorID;
+        }
         public Employee(int id, string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int salary, int branchID, int supervisorID)
         {
             ID = id;
@@ -30,18 +40,6 @@ namespace SQLproject
             SupervisorID = supervisorID;
 
         }
-
-        public Employee( string firstName, string lastName, GenderEnum gender, DateOnly dateOfBirth, int salary, int branchID, int supervisorID)
-        {   
-            FirstName = firstName;
-            LastName = lastName;
-            Gender = gender;
-            DateOfBirth = dateOfBirth;
-            GrossSalary = salary;
-            BranchID = branchID;
-            SupervisorID = supervisorID;
-        }
-
         public override string ToString()
         {
 

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SQLproject"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1600">
-    <Grid>
+    <Grid Background="#FFEEF5FF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="3*"/>
@@ -24,40 +24,68 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-
-        <ListBox x:Name="list_employees" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" FontSize="22" Background="#FFF1F1F1" BorderBrush="#FF86888C" SelectionChanged="list_employees_SelectionChanged"/>
+    
+        <ListBox x:Name="list_employees" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="2" FontSize="22" Background="#FFCADEED" BorderBrush="#FF1B5E75" SelectionChanged="list_employees_SelectionChanged" Foreground="#FF03073E"/>
 
 
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical">
-            <Label Content="NAME" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
+            <Label Content="NAME" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22" Foreground="#FF03073E"/>
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                <TextBox x:Name="textbox_FirstName" Text="" FontSize="22" Width="300" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center" IsReadOnly="True"/>
-                <TextBox x:Name="textbox_LastName" Text="" FontSize="22" Width="300" Height="40" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                <TextBox x:Name="textbox_FirstName" Text="" FontSize="22" Width="300" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center" IsReadOnly="True" BorderBrush="#FF1B5E75" CaretBrush="Red"/>
+                <TextBox x:Name="textbox_LastName" Text="" FontSize="22" Width="300" Height="40" VerticalContentAlignment="Center" IsReadOnly="True" BorderBrush="#FF1B5E75"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="GENDER" FontWeight="Black" FontSize="22" Margin="0,0,65,0"/>
-                <Label Content="ID" Width="177" FontWeight="Black" FontSize="22"/>
-                <Label Content="SALARY" Width="177" FontWeight="Black" Margin="-10,0,0,0" FontSize="22"/>
+                <Label Content="GENDER" FontWeight="Black" FontSize="22" Margin="0,0,65,0" Foreground="#FF03073E"/>
+                <Label Content="ID" Width="177" FontWeight="Black" FontSize="22" Foreground="#FF03073E"/>
+                <Label Content="SALARY" Width="177" FontWeight="Black" Margin="-10,0,0,0" FontSize="22" Foreground="#FF03073E"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="textbox_gender" Text="" FontSize="22" Width="150" Margin="0,0,15,0" Height="40" VerticalAlignment="Center" IsReadOnly="True" Focusable="False"/>
-                <TextBox x:Name="textbox_EmployeeID" Text="" FontSize="22" Width="150" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center" IsReadOnly="True" Focusable="False"/>
-                <TextBox x:Name="textbox_Salary" Text="" FontSize="22" Width="285" Height="40" VerticalContentAlignment="Center" IsReadOnly="True" Focusable="False"/>
+                <TextBox x:Name="textbox_gender" Text="" FontSize="22" Width="150" Margin="0,0,15,0" Height="40" VerticalAlignment="Center" IsReadOnly="True" Focusable="False" BorderBrush="#FF1B5E75"/>
+                <TextBox x:Name="textbox_EmployeeID" Text="" FontSize="22" Width="150" Margin="0,0,15,0" Height="40" VerticalContentAlignment="Center" IsReadOnly="True" Focusable="False" BorderBrush="#FF1B5E75"/>
+                <TextBox x:Name="textbox_Salary" Text="" FontSize="22" Width="285" Height="40" VerticalContentAlignment="Center" IsReadOnly="True" Focusable="False" BorderBrush="#FF1B5E75"/>
             </StackPanel>
-            <Label Content="BRANCH ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_BranchID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False"/>
-            <Label Content="SUPERVISOR ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_SupervisorID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False"/>
-            <Label Content="DATE OF BIRTH" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22"/>
-            <TextBox x:Name="textbox_dateOfBirth" Text="" FontSize="22" Width="310" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False"/>
+            <Label Content="BRANCH ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22" Foreground="#FF03073E"/>
+            <TextBox x:Name="textbox_BranchID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False" BorderBrush="#FF1B5E75"/>
+            <Label Content="SUPERVISOR ID" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22" Foreground="#FF03073E"/>
+            <TextBox x:Name="textbox_SupervisorID" Text="" FontSize="22" Width="610" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False" BorderBrush="#FF1B5E75"/>
+            <Label Content="DATE OF BIRTH" HorizontalAlignment="Left" Width="177" FontWeight="Black" FontSize="22" Foreground="#FF03073E"/>
+            <TextBox x:Name="textbox_dateOfBirth" Text="" FontSize="22" Width="310" Height="40" VerticalContentAlignment="Center" HorizontalAlignment="Left" IsReadOnly="True" Focusable="False" BorderBrush="#FF1B5E75"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Button x:Name="button_AddEmployee" Content="ADD EMPLOYEE" Width="250" Height="70" Margin="0,0,30,30" FontWeight="Black" FontSize="20" Click="button_AddEmployee_Click"/>
-            <Button x:Name="button_UpdateEmployee" Content="UPDATE EMPLOYEE" Width="250" Height="70" Margin="0,0,30,30" FontWeight="Black" FontSize="20" Click="button_UpdateEmployee_Click"/>
-            <Button x:Name="button_RemoveEmployee" Content="REMOVE EMPLOYEE" Width="250" Height="70" Margin="0,0,0,30" FontWeight="Black" FontSize="20" Click="button_RemoveEmployee_Click"/>
+            <Button x:Name="button_AddEmployee" Content="ADD EMPLOYEE" Width="250" Height="70" Margin="0,0,30,30" FontWeight="Black" FontSize="20" Click="button_AddEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF03073E" Offset="0.57"/>
+                        <GradientStop Color="#FF085EA0" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button_UpdateEmployee" Content="UPDATE EMPLOYEE" Width="250" Height="70" Margin="0,0,30,30" FontWeight="Black" FontSize="20" Click="button_UpdateEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF03073E" Offset="0.57"/>
+                        <GradientStop Color="#FF085EA0" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button_RemoveEmployee" Content="REMOVE EMPLOYEE" Width="250" Height="70" Margin="0,0,0,30" FontWeight="Black" FontSize="20" Click="button_RemoveEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF03073E" Offset="0.57"/>
+                        <GradientStop Color="#FF085EA0" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
         </StackPanel>
 
-        <Button Grid.Column="3" Grid.Row="4" x:Name="button_refresh" Content="REFRESH" Margin="10,30" FontWeight="Black" FontSize="20 " Click="button_refresh_Click"/>
+        <Button Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2" x:Name="button_refresh" Content="REFRESH" Margin="160,30" FontWeight="Black" FontSize="20 " Click="button_refresh_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF03073E" Offset="0.57"/>
+                    <GradientStop Color="#FF085EA0" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
     </Grid>
 </Window>
