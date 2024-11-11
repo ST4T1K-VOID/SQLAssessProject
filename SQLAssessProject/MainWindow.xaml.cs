@@ -24,7 +24,6 @@ namespace SQLproject
             InitializeComponent();
             ListEmployees();         
         }
-
         void ListEmployees()
         {
             list_employees.ItemsSource = null;
@@ -107,7 +106,7 @@ namespace SQLproject
                 int updatedSupervisorID = int.Parse(updateEmployeeWindow.textbox_supervisorID.Text);
                 GenderEnum tempgender = (GenderEnum)updateEmployeeWindow.combo_gender.SelectedIndex;
 
-                Employee updatedEmployee = new Employee(updatedFirstName, updatedLastName, tempgender, oldEmployee.DateOfBirth, updatedSalary, updatedBranchID, updatedSupervisorID);
+                Employee updatedEmployee = new Employee(oldEmployee.ID, updatedFirstName, updatedLastName, tempgender, oldEmployee.DateOfBirth, updatedSalary, updatedBranchID, updatedSupervisorID);
                 if (Service.UpdateEmployee(oldEmployee, updatedEmployee))
                 {
                     MessageBox.Show("Employee updated", "Successful Operation", MessageBoxButton.OK);
@@ -150,6 +149,50 @@ namespace SQLproject
             }
         }
 
+        private void button_filter_Click(object sender, RoutedEventArgs e)
+        {
+            FilterWindow filterWindow = new FilterWindow();
+            filterWindow.ShowDialog();
 
+            if (filterWindow.DialogResult == true)
+            {
+                Filter? filter = filterWindow.filter;
+                if (filter == Filter.byName)
+                {
+                    string firstName = filterWindow.textbox_firstName.Text;
+                    string lastName = filterWindow.textbox_LastName.Text;
+                    
+                    List<Employee> filteredemployees = Service.FilterEmployeesByName(firstName, lastName);
+
+                    if (filteredemployees == null)
+                    {
+                        MessageBox.Show("Employees with that name could not be found", "Employees not found", MessageBoxButton.OK);
+                        return;
+                    }
+                    else
+                    {
+                        list_employees.ItemsSource = null;
+                        list_employees.ItemsSource = filteredemployees;
+                    }
+                    
+                }
+                else if (filter == Filter.byBranch)
+                {
+
+                }
+                else if (filter == Filter.bySalary)
+                {
+
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

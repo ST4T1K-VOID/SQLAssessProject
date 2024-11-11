@@ -17,6 +17,11 @@ namespace SQLproject
     /// <summary>
     /// Interaction logic for UpdateEmployeeWindow.xaml
     /// </summary>
+     
+
+
+
+
     public partial class UpdateEmployeeWindow : Window
     {
         public UpdateEmployeeWindow(Employee selectedEmployee)
@@ -30,7 +35,6 @@ namespace SQLproject
             textbox_branchID.Text = selectedEmployee.BranchID.ToString();
             textbox_supervisorID.Text = selectedEmployee.SupervisorID.ToString();
         }
-
         private void button_cancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;

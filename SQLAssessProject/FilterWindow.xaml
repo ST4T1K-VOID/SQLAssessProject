@@ -1,0 +1,45 @@
+﻿<Window x:Class="SQLproject.FilterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SQLproject"
+        mc:Ignorable="d"
+        Title="FilterWindow" Height="251" Width="686" Background="#FFEEF5FF">
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,23,0,0">
+            <StackPanel Orientation="Vertical" Width="132">
+                <Label Content="FILTER OPTIONS" FontWeight="Black"/>
+                <CheckBox x:Name="check_byName" Content="By Name" Checked="check_byName_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center"/>
+                <CheckBox x:Name="check_bySalary" Content="By Salary" Checked="check_bySalary_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center"/>
+                <CheckBox x:Name="check_byBranch" Content="By Branch ID" Checked="check_byBranch_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="20,10" Width="475" Height="131">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="FIRST NAME:" FontWeight="Black"/>
+                    <TextBox x:Name="textbox_firstName" Width="150" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
+                    <Label Content="LAST NAME:" FontWeight="Black"/>
+                    <TextBox x:Name="textbox_LastName" Width="150" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Left">
+                    <Label Content="MIN RANGE:" FontWeight="Black"/>
+                    <TextBox x:Name="textbox_minRange" Width="100" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
+                    <Label Content="MAX RANGE:" FontWeight="Black"/>
+                    <TextBox x:Name="textbox_maxRange" Width="100" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                    <Label Content="BRANCH ID:" FontWeight="Black"/>
+                    <TextBox x:Name="textbox_branchID" Width="75" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Button x:Name="button_confirm" Width="125" FontWeight="Black" Content="CONFIRM" Height="45" Click="button_confirm_Click"/>
+            <Button x:Name="button_cancel" FontWeight="Black" Content="CANCEL" Width="125" Height="45" Margin="15,0,0,0" Click="button_cancel_Click" />
+        </StackPanel>
+
+
+    </Grid>
+</Window>

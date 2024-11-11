@@ -49,7 +49,11 @@ namespace SQLproject
             }
             return employees;
         }
-
+        /// <summary>
+        /// Connects with database to add an employee record
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <returns></returns>
         public int DatabaseAddEmployee(Employee employee)
         {
             using MySqlConnection connection = new MySqlConnection(connString);
@@ -72,6 +76,10 @@ namespace SQLproject
             int returnID = Convert.ToInt32(command.ExecuteScalar());
             return returnID;
         }
+        /// <summary>
+        /// Connects with database to delete an employee record
+        /// </summary>
+        /// <param name="employee"></param>
         public void DatabaseDeleteEmployee(Employee employee)
         {
             using MySqlConnection connection = new MySqlConnection(connString);
@@ -85,19 +93,143 @@ namespace SQLproject
 
             command.ExecuteNonQuery();
         }
-        public void DatabaseUpdateEmployee()
+        /// <summary>
+        /// Connects with database to update an employee
+        /// </summary>
+        public void DatabaseUpdateEmployee(Employee employee)
+        {
+            using MySqlConnection connection = new MySqlConnection(connString);
+
+            string sqlQuery = @"UPDATE employees
+                                SET given_name = @new_given_name, family_name = @new_family_name, gender_identity = @new_gender,
+                                gross_salary = @new_salary, branch_id = @new_bid, supervisor_id = @new_sid 
+                                WHERE employee_id = @target_id";
+            MySqlCommand command = new MySqlCommand(sqlQuery, connection);
+
+            command.Parameters.AddWithValue("@target_id", employee.ID);
+            command.Parameters.AddWithValue("@new_given_name", employee.FirstName);
+            command.Parameters.AddWithValue("@new_family_name", employee.LastName);
+            command.Parameters.AddWithValue("@new_gender", employee.Gender);
+            command.Parameters.AddWithValue("@new_salary", employee.GrossSalary);
+            command.Parameters.AddWithValue("@new_bid", employee.BranchID);
+            command.Parameters.AddWithValue("@new_sid", employee.SupervisorID);
+
+            connection.Open();
+
+            command.ExecuteNonQuery();
+        }
+        public List<Employee>? DatabaseFilterByName(string targetFirstName, string targetLastName)
+        {
+            using MySqlConnection connection = new MySqlConnection(connString);
+            if (targetFirstName == string.Empty && targetLastName != string.Empty)
+            {
+                string sqlQuery = @"SELECT * FROM employees WHERE family_name = @target_family_name";
+                MySqlCommand command = new MySqlCommand(sqlQuery, connection);
+
+                command.Parameters.AddWithValue("@target_family_name", targetLastName);
+                List<Employee> employees = new List<Employee>();
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["employee_id"]);
+                    string firstName = reader.GetString("given_name");
+                    string lastName = reader.GetString("family_name");
+
+                    DateTime dateTime = reader.GetDateTime("date_of_birth");
+                    DateOnly dateOfBirth = DateOnly.FromDateTime(dateTime);
+
+                    string genderString = reader.GetString("gender_identity");
+                    GenderEnum gender = Enum.Parse<GenderEnum>(genderString);
+
+                    int salary = Convert.ToInt32(reader["gross_salary"]);
+                    int supervisorID = Convert.ToInt32(reader["supervisor_id"]);
+                    int branchID = Convert.ToInt32(reader["branch_id"]);
+
+                    Employee employee = new Employee(id, firstName, lastName, gender, dateOfBirth, salary, branchID, supervisorID);
+                    employees.Add(employee);
+                }
+                return employees;
+            }
+
+            else if (targetFirstName != string.Empty && targetLastName == string.Empty)
+            {
+                string sqlQuery = @"SELECT * FROM employees WHERE given_name = @target_given_name";
+                MySqlCommand command = new MySqlCommand(sqlQuery, connection);
+
+                command.Parameters.AddWithValue("@target_given_name", targetFirstName);
+                List<Employee> employees = new List<Employee>();
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["employee_id"]);
+                    string firstName = reader.GetString("given_name");
+                    string lastName = reader.GetString("family_name");
+
+                    DateTime dateTime = reader.GetDateTime("date_of_birth");
+                    DateOnly dateOfBirth = DateOnly.FromDateTime(dateTime);
+
+                    string genderString = reader.GetString("gender_identity");
+                    GenderEnum gender = Enum.Parse<GenderEnum>(genderString);
+
+                    int salary = Convert.ToInt32(reader["gross_salary"]);
+                    int supervisorID = Convert.ToInt32(reader["supervisor_id"]);
+                    int branchID = Convert.ToInt32(reader["branch_id"]);
+
+                    Employee employee = new Employee(id, firstName, lastName, gender, dateOfBirth, salary, branchID, supervisorID);
+                    employees.Add(employee);
+                }
+                return employees;
+            }
+
+            else // firstname != null && lastname != null
+            {
+                string sqlQuery = @"SELECT * FROM employees WHERE given_name = @target_given_name AND family_name = @target_family_name";
+                MySqlCommand command = new MySqlCommand(sqlQuery, connection);
+
+                command.Parameters.AddWithValue("@target_family_name", targetLastName);
+                command.Parameters.AddWithValue("@target_given_name", targetFirstName);
+
+                List<Employee> employees = new List<Employee>();
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["employee_id"]);
+                    string firstName = reader.GetString("given_name");
+                    string lastName = reader.GetString("family_name");
+
+                    DateTime dateTime = reader.GetDateTime("date_of_birth");
+                    DateOnly dateOfBirth = DateOnly.FromDateTime(dateTime);
+
+                    string genderString = reader.GetString("gender_identity");
+                    GenderEnum gender = Enum.Parse<GenderEnum>(genderString);
+
+                    int salary = Convert.ToInt32(reader["gross_salary"]);
+                    int supervisorID = Convert.ToInt32(reader["supervisor_id"]);
+                    int branchID = Convert.ToInt32(reader["branch_id"]);
+
+                    Employee employee = new Employee(id, firstName, lastName, gender, dateOfBirth, salary, branchID, supervisorID);
+                    employees.Add(employee);
+                }
+                return employees;
+            }
+        }
+        public void DatabaseFilterBySalary()
         {
 
         }
-        public void DatabaseFilter(string filter, Tuple<string,string,string>? parameters)
+        public void DatabaseFilterByBranch()
         {
-            /*
-             * filter options
-             * 
-             * by name (firstname, lastname)
-             * by salary (range, operator)
-             * by branchid (id)
-            */
+
         }
+        public void DatabaseFindEmployeeSales()
+        {
+
+        }
+
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\OBRIEM\source\repos\SQLAssessProject\SQLAssessProject\App.xaml
-3-46514319
+41116608079
 
-9-356954986
+10-1543692450
 206-1612578138
-AddEmployeeWindow.xaml;MainWindow.xaml;UpdateEmployeeWindow.xaml;
+AddEmployeeWindow.xaml;FilterWindow.xaml;MainWindow.xaml;UpdateEmployeeWindow.xaml;
 
 False
 

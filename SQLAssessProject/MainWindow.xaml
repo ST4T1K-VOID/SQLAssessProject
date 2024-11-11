@@ -78,8 +78,16 @@
                 </Button.Foreground>
             </Button>
         </StackPanel>
-
-        <Button Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2" x:Name="button_refresh" Content="REFRESH" Margin="160,30" FontWeight="Black" FontSize="20 " Click="button_refresh_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+        
+        <Button Grid.Column="3" Grid.Row="4" x:Name="button_filter" Content="FILTER" Margin="20,20" FontWeight="Black" FontSize="20 " Click="button_filter_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF03073E" Offset="0.57"/>
+                    <GradientStop Color="#FF085EA0" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+        </Button>
+        <Button Grid.Column="4" Grid.Row="4" x:Name="button_refresh" Content="REFRESH" Margin="20,20" FontWeight="Black" FontSize="20 " Click="button_refresh_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF03073E" Offset="0.57"/>

@@ -4,14 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SQLproject
 {
+    public enum Filter
+    {
+        byName = 0,
+        bySalary = 1,
+        byBranch = 2
+    }
     public class DataService
     {
-
         private List<Employee> employees = new List<Employee>();
         private Connection databaseConnection = new Connection();
 
@@ -31,53 +37,6 @@ namespace SQLproject
         {
             List<Employee> employeesList = employees.ToList();
             return employeesList;
-        }
-        /// <summary>
-        /// Searches for employees with a specififed first or last name or both.
-        /// </summary>
-        /// <param name="firstName"></param>
-        /// <param name="Lastname"></param>
-        /// <returns>
-        /// List: of all employees matching the specified parameters.
-        /// </returns>
-        public List<Employee> FindEmployees(string? firstName = null, string? Lastname = null)
-        {
-            List<Employee> filteredEmployees = new List<Employee>();
-            if (firstName == null && Lastname == null)
-            {
-                return employees;
-            }
-            else if (firstName != null && Lastname == null)
-            {
-                foreach (Employee employee in employees)
-                {
-                    if (employee.FirstName == firstName)
-                    {
-                        filteredEmployees.Add(employee);
-                    }
-                }
-            }
-            else if (firstName == null && Lastname != null)
-            {
-                foreach(Employee employee in employees)
-                {
-                    if (employee.LastName == Lastname)
-                    {
-                        filteredEmployees.Add(employee);
-                    }
-                }
-            }
-            else //firstname && lastname != Null
-            {
-                foreach (Employee employee in employees)
-                {
-                    if (employee.FirstName == firstName && employee.LastName == Lastname)
-                    {
-                        filteredEmployees.Add(employee);
-                    }
-                }
-            }
-            return filteredEmployees;
         }
         /// <summary>
         /// Adds an employee
@@ -107,7 +66,8 @@ namespace SQLproject
                 return false;
             }
 
-            employees.Add(new Employee(employeeID, firstName, lastName, gender, dateOfBirth, grossSalary, branchID, supervisorID));
+            //employees.Add(new Employee(employeeID, firstName, lastName, gender, dateOfBirth, grossSalary, branchID, supervisorID));
+            RefreshEmployees();
             return true;
         }
         /// <summary>
@@ -147,11 +107,37 @@ namespace SQLproject
             {
                 return false;
             }
-            int index = employees.IndexOf(targetEmployee);
-            employees[index] = updatedInfoEmployee;
+            
+            databaseConnection.DatabaseUpdateEmployee(updatedInfoEmployee);
+            RefreshEmployees();
             return true;
         }
 
-       
+        public List<Employee>? FilterEmployeesByName(string firstName, string lastName)
+        {
+            if (firstName == string.Empty && lastName == string.Empty)
+            {
+                return null;
+            }
+            else
+            {
+                firstName = firstName.Trim();
+                lastName = lastName.Trim();
+            }
+            List<Employee>? filteredEmployees = databaseConnection.DatabaseFilterByName(firstName, lastName);
+
+            return filteredEmployees;
+        }
+        public bool FilterEmployeesBySalary(int? min, int? max)
+        {
+
+            return true;
+
+        }
+        public bool FilterEmployeesByName(int branchID)
+        {
+
+            return true;
+        }
     }
 }
