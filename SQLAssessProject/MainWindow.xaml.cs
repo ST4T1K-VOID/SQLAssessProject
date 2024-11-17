@@ -32,6 +32,8 @@ namespace SQLproject
 
         private void list_employees_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            button_getSales.IsEnabled = true;
+
             Employee? selectedEmployee = list_employees.SelectedItem as Employee;
             if (selectedEmployee == null)
             {
@@ -176,13 +178,32 @@ namespace SQLproject
                     }
                     
                 }
-                else if (filter == Filter.byBranch)
-                {
-
-                }
                 else if (filter == Filter.bySalary)
                 {
+                    int max = -1;
+                    int min = -1;
+                    int.TryParse(filterWindow.textbox_maxRange.Text, out max);
+                    int.TryParse(filterWindow.textbox_minRange.Text, out min);
 
+                    if (max == -1 || min == -1)
+                    {
+                        MessageBox.Show("ERROR: invalid input", "ERROR", MessageBoxButton.OK);
+                        return;
+                    }
+                    list_employees.ItemsSource = null;
+                    list_employees.ItemsSource = Service.FilterEmployeesBySalary(max, min);
+                }
+
+                else if (filter == Filter.byBranch)
+                {
+                    List<Employee> employees = Service.FilterEmployeesByBranch(int.Parse(filterWindow.textbox_branchID.Text));
+                    if (employees.Count == 0)
+                    {
+                        MessageBox.Show($"There are no Employees found with branch ID {filterWindow.textbox_branchID.Text}", "No Employees Found", MessageBoxButton.OK);
+                        return;
+                    }
+                    list_employees.ItemsSource= null;
+                    list_employees.ItemsSource = employees;
                 }
                 else
                 {
@@ -193,6 +214,18 @@ namespace SQLproject
             {
                 return;
             }
+        }
+
+        private void button_getSales_Click(object sender, RoutedEventArgs e)
+        {
+            if (list_employees.SelectedItem == null)
+            {
+                return;
+            }
+            Employee employee = list_employees.SelectedItem as Employee;
+            string sales = Service.GetEmployeeSales(employee.ID);
+
+            MessageBox.Show(sales, "TOTAL SALES",MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

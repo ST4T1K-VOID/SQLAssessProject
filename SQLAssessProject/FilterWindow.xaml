@@ -9,35 +9,52 @@
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,23,0,0">
             <StackPanel Orientation="Vertical" Width="132">
-                <Label Content="FILTER OPTIONS" FontWeight="Black"/>
-                <CheckBox x:Name="check_byName" Content="By Name" Checked="check_byName_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center"/>
-                <CheckBox x:Name="check_bySalary" Content="By Salary" Checked="check_bySalary_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center"/>
-                <CheckBox x:Name="check_byBranch" Content="By Branch ID" Checked="check_byBranch_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center"/>
+                <Label Content="FILTER OPTIONS" FontWeight="Black" Foreground="#FF03073E"/>
+                <CheckBox x:Name="check_byName" Content="By Name" Checked="check_byName_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center" Foreground="#FF03073E"/>
+                <CheckBox x:Name="check_bySalary" Content="By Salary" Checked="check_bySalary_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center" Foreground="#FF03073E"/>
+                <CheckBox x:Name="check_byBranch" Content="By Branch ID" Checked="check_byBranch_Checked" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center" Foreground="#FF03073E"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Margin="20,10" Width="475" Height="131">
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="FIRST NAME:" FontWeight="Black"/>
+                    <Label Content="FIRST NAME:" FontWeight="Black" Foreground="#FF03073E"/>
                     <TextBox x:Name="textbox_firstName" Width="150" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
-                    <Label Content="LAST NAME:" FontWeight="Black"/>
+                    <Label Content="LAST NAME:" FontWeight="Black" Foreground="#FF03073E"/>
                     <TextBox x:Name="textbox_LastName" Width="150" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Left">
-                    <Label Content="MIN RANGE:" FontWeight="Black"/>
+                    <Label Content="MIN RANGE:" FontWeight="Black" Foreground="#FF03073E"/>
                     <TextBox x:Name="textbox_minRange" Width="100" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
-                    <Label Content="MAX RANGE:" FontWeight="Black"/>
+                    <Label Content="MAX RANGE:" FontWeight="Black" Foreground="#FF03073E"/>
                     <TextBox x:Name="textbox_maxRange" Width="100" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
+                    <!--<Label Content="OPERATOR:" FontWeight="Black" Foreground="#FF03073E"/>
+                    <ComboBox x:Name="combo_operator" Margin="5,0" Width="40" BorderBrush="#FF1B5E75" Foreground="#FF03073E" Background="Black" />-->
+
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
-                    <Label Content="BRANCH ID:" FontWeight="Black"/>
+                    <Label Content="BRANCH ID:" FontWeight="Black" Foreground="#FF03073E"/>
                     <TextBox x:Name="textbox_branchID" Width="75" BorderBrush="#FF1B5E75" VerticalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        
+
         <StackPanel Orientation="Horizontal" Margin="0,0,0,20" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button x:Name="button_confirm" Width="125" FontWeight="Black" Content="CONFIRM" Height="45" Click="button_confirm_Click"/>
-            <Button x:Name="button_cancel" FontWeight="Black" Content="CANCEL" Width="125" Height="45" Margin="15,0,0,0" Click="button_cancel_Click" />
+            <Button x:Name="button_confirm" Width="125" FontWeight="Black" Content="CONFIRM" Height="45" Click="button_confirm_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF03073E" Offset="0.57"/>
+                        <GradientStop Color="#FF085EA0" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button_cancel" FontWeight="Black" Content="CANCEL" Width="125" Height="45" Margin="15,0,0,0" Click="button_cancel_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF03073E" Offset="0.57"/>
+                        <GradientStop Color="#FF085EA0" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
         </StackPanel>
 
 

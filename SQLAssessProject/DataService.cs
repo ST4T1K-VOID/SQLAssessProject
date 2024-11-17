@@ -3,6 +3,7 @@ using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
@@ -128,16 +129,35 @@ namespace SQLproject
 
             return filteredEmployees;
         }
-        public bool FilterEmployeesBySalary(int? min, int? max)
+        public List<Employee> FilterEmployeesBySalary(int max, int min)
         {
-
-            return true;
-
+            List<Employee> employeesBySalary = databaseConnection.DatabaseFilterBySalary(max, min);
+            
+            return employeesBySalary;
         }
-        public bool FilterEmployeesByName(int branchID)
+        public List<Employee> FilterEmployeesByBranch(int branchID)
         {
+            List<Employee> employees = databaseConnection.DatabaseFilterByBranch(branchID);
 
-            return true;
+            return employees;
+        }
+        /// <summary>
+        /// returns the sales of the entered employee ID, <br/> if the employee has no sales, returns an error message to be displayed
+        /// </summary>
+        /// <param name="employeeID"></param>
+        /// <returns></returns>
+        public string GetEmployeeSales(int employeeID)
+        {
+            string? total_sales = databaseConnection.DatabaseFindEmployeeSales(employeeID);
+            
+            if (total_sales == null)
+            {
+                return "Employee Sales not found";
+            }
+            else
+            {
+                return total_sales;
+            }
         }
     }
 }

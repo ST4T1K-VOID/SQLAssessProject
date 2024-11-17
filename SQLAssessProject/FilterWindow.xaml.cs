@@ -23,15 +23,19 @@ namespace SQLproject
         public FilterWindow()
         {
             InitializeComponent();
+            textbox_firstName.IsEnabled = false;
+            textbox_LastName.IsEnabled = false;
+            textbox_minRange.IsEnabled = false;
+            textbox_maxRange.IsEnabled = false;
+            textbox_branchID.IsEnabled = false;
         }
+
+       
 
         public Filter? filter = null;
 
         private void check_byName_Checked(object sender, RoutedEventArgs e)
         {
-            
-
-
             filter = Filter.byName;
             check_byBranch.IsChecked = false;
             check_bySalary.IsChecked = false;
@@ -107,6 +111,11 @@ namespace SQLproject
                     MessageBox.Show("Min and max range may only contain numbers", "Invalid input", MessageBoxButton.OK);
                     return;
                 }
+                else if (!Int32.TryParse(textbox_minRange.Text, out int result) || !Int32.TryParse(textbox_maxRange.Text, out int result1))
+                {
+                    MessageBox.Show("Input value is outside of acceptable range", "ERROR", MessageBoxButton.OK);
+                }
+
                 else if (textbox_minRange.Text == string.Empty && textbox_maxRange.Text == string.Empty)
                 {
                     MessageBox.Show("Min and max range must be filled", "empty fields", MessageBoxButton.OK);
@@ -129,6 +138,10 @@ namespace SQLproject
                 {
                     MessageBox.Show("Branch ID must be a number", "invalid input", MessageBoxButton.OK);
                     return;
+                }
+                else if (!long.TryParse(textbox_branchID.Text, out long result))
+                {
+                    MessageBox.Show("Input value is outside of acceptable range", "ERROR", MessageBoxButton.OK);
                 }
                 else if (textbox_branchID.Text == string.Empty)
                 {

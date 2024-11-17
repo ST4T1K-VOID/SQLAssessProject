@@ -1,11 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//using MySqlConnection connection = new MySqlConnection(conString);
 namespace SQLproject
 {
     public class Connection
@@ -118,6 +118,13 @@ namespace SQLproject
 
             command.ExecuteNonQuery();
         }
+        /// <summary>
+        /// Takes up to two strings and returns names from the database that match the input <br/>
+        /// Can give a first name, last name or both
+        /// </summary>
+        /// <param name="targetFirstName"></param>
+        /// <param name="targetLastName"></param>
+        /// <returns></returns>
         public List<Employee>? DatabaseFilterByName(string targetFirstName, string targetLastName)
         {
             using MySqlConnection connection = new MySqlConnection(connString);
@@ -218,18 +225,107 @@ namespace SQLproject
                 return employees;
             }
         }
-        public void DatabaseFilterBySalary()
+        /// <summary>
+        /// returns employees from the database with a salary within the specified range
+        /// </summary>
+        /// <param name="max"></param>
+        /// <param name="min"></param>
+        public List<Employee>  DatabaseFilterBySalary(int max, int min)
         {
+            using MySqlConnection connection = new MySqlConnection(connString);
 
+            string sqlQuery = @"SELECT * FROM employees WHERE gross_salary < @max_range AND gross_salary > @min_range";
+            MySqlCommand command = new MySqlCommand(sqlQuery, connection);
+
+            command.Parameters.AddWithValue("@max_range", max);
+            command.Parameters.AddWithValue ("@min_range", min);
+
+            List<Employee> employeesBySalary = new List<Employee>();
+            connection.Open();
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["employee_id"]);
+                string firstName = reader.GetString("given_name");
+                string lastName = reader.GetString("family_name");
+
+                DateTime dateTime = reader.GetDateTime("date_of_birth");
+                DateOnly dateOfBirth = DateOnly.FromDateTime(dateTime);
+
+                string genderString = reader.GetString("gender_identity");
+                GenderEnum gender = Enum.Parse<GenderEnum>(genderString);
+
+                int salary = Convert.ToInt32(reader["gross_salary"]);
+                int supervisorID = Convert.ToInt32(reader["supervisor_id"]);
+                int branchID = Convert.ToInt32(reader["branch_id"]);
+
+                Employee employee = new Employee(id, firstName, lastName, gender, dateOfBirth, salary, branchID, supervisorID);
+                employeesBySalary.Add(employee);
+            }
+            return employeesBySalary;
         }
-        public void DatabaseFilterByBranch()
+        public List<Employee> DatabaseFilterByBranch(int targetBranchID)
         {
+            using MySqlConnection connection = new MySqlConnection(connString);
 
+            string sqlQuery = @"SELECT * FROM employees WHERE branch_id = @target_branch_id";
+
+            MySqlCommand command = new MySqlCommand(sqlQuery, connection);
+            command.Parameters.AddWithValue("@target_branch_id", targetBranchID);
+
+            List<Employee> employees = new List<Employee>();
+            connection.Open();
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["employee_id"]);
+                string firstName = reader.GetString("given_name");
+                string lastName = reader.GetString("family_name");
+
+                DateTime dateTime = reader.GetDateTime("date_of_birth");
+                DateOnly dateOfBirth = DateOnly.FromDateTime(dateTime);
+
+                string genderString = reader.GetString("gender_identity");
+                GenderEnum gender = Enum.Parse<GenderEnum>(genderString);
+
+                int salary = Convert.ToInt32(reader["gross_salary"]);
+                int supervisorID = Convert.ToInt32(reader["supervisor_id"]);
+                int branchID = Convert.ToInt32(reader["branch_id"]);
+
+                Employee employee = new Employee(id, firstName, lastName, gender, dateOfBirth, salary, branchID, supervisorID);
+                employees.Add(employee);
+            }
+            return employees;
         }
-        public void DatabaseFindEmployeeSales()
+        /// <summary>
+        /// returns the total sales of the selected employee ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string? DatabaseFindEmployeeSales(int id)
         {
+            using MySqlConnection connection = new MySqlConnection(connString);
 
+            string sqlQuery = @"SELECT SUM(total_sales) FROM employees
+                                INNER JOIN working_with
+                                ON employees.employee_id = working_with.employee_id
+                                WHERE employees.employee_id = @target_id";
+
+            MySqlCommand command = new MySqlCommand(sqlQuery, connection);
+            command.Parameters.AddWithValue("@target_id", id);
+
+            connection.Open();
+            string? result = Convert.ToString(command.ExecuteScalar());
+
+            if (result == string.Empty)
+            {
+                return null;
+            }
+
+            return ("$" + result +" In Sales");
         }
-
     }
 }

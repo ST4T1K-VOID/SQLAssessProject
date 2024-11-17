@@ -53,7 +53,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Button x:Name="button_AddEmployee" Content="ADD EMPLOYEE" Width="250" Height="70" Margin="0,0,30,30" FontWeight="Black" FontSize="20" Click="button_AddEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+            <Button x:Name="button_AddEmployee" Content="ADD EMPLOYEE" Width="215" Height="70" Margin="0,0,15,30" FontWeight="Black" FontSize="20" Click="button_AddEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF03073E" Offset="0.57"/>
@@ -61,7 +61,7 @@
                     </LinearGradientBrush>
                 </Button.Foreground>
             </Button>
-            <Button x:Name="button_UpdateEmployee" Content="UPDATE EMPLOYEE" Width="250" Height="70" Margin="0,0,30,30" FontWeight="Black" FontSize="20" Click="button_UpdateEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+            <Button x:Name="button_UpdateEmployee" Content="UPDATE EMPLOYEE" Width="215" Height="70" Margin="0,0,15,30" FontWeight="Black" FontSize="20" Click="button_UpdateEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF03073E" Offset="0.57"/>
@@ -69,7 +69,15 @@
                     </LinearGradientBrush>
                 </Button.Foreground>
             </Button>
-            <Button x:Name="button_RemoveEmployee" Content="REMOVE EMPLOYEE" Width="250" Height="70" Margin="0,0,0,30" FontWeight="Black" FontSize="20" Click="button_RemoveEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+            <Button x:Name="button_RemoveEmployee" Content="REMOVE EMPLOYEE" Width="215" Height="70" Margin="0,0,15,30" FontWeight="Black" FontSize="20" Click="button_RemoveEmployee_Click" Background="#FFCADEED" BorderBrush="#FF1B5E75">
+                <Button.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF03073E" Offset="0.57"/>
+                        <GradientStop Color="#FF085EA0" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+            <Button x:Name="button_getSales" Content="GET SALES" Width="215" Height="70" Margin="0,0,0,30" FontWeight="Black" FontSize="20" Background="#FFCADEED" BorderBrush="#FF1B5E75" IsEnabled="False" Click="button_getSales_Click">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF03073E" Offset="0.57"/>
