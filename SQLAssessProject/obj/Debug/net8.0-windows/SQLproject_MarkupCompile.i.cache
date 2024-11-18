@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Maddie\source\repos\SQLAssessProject\SQLAssessProject\obj\Debug\net8.0-windows\
+C:\Users\OBRIEM\source\repos\SQLAssessProject\SQLAssessProject\obj\Debug\net8.0-windows\
 SQLproject
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\Maddie\source\repos\SQLAssessProject\SQLAssessProject\App.xaml
-41116608079
+C:\Users\OBRIEM\source\repos\SQLAssessProject\SQLAssessProject\App.xaml
+51513618709
 
-121494108818
-2061909059628
-AddEmployeeWindow.xaml;FilterWindow.xaml;MainWindow.xaml;UpdateEmployeeWindow.xaml;
+13734791821
+206-1612578138
+AddEmployeeWindow.xaml;CompanyInfoWindow.xaml;FilterWindow.xaml;MainWindow.xaml;UpdateEmployeeWindow.xaml;
 
-False
+True
 

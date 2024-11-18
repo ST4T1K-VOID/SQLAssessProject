@@ -227,5 +227,11 @@ namespace SQLproject
 
             MessageBox.Show(sales, "TOTAL SALES",MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+        private void button_company_Click(object sender, RoutedEventArgs e)
+        {
+            CompanyInfoWindow companyInfoWindow = new CompanyInfoWindow();
+            companyInfoWindow.Show();
+        }
     }
 }
