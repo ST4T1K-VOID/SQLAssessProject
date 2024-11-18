@@ -12,8 +12,9 @@
             <Rectangle Width="150" Height="150" Margin="0,0,0,0" Fill="Red"/>
             <Button Style="{DynamicResource ButtonStyle_Invis}" Cursor="Hand" Content="PLACEHOLDER" Margin="-150,0,0,0" Width="150" Height="150" Background="#00DDDDDD" Foreground="Black" BorderBrush="#00000000"/>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="425">
-                <Label FontSize="22" FontWeight="Black" Content="SO&amp;SO COMPANY" Margin="5,0,0,0"/>
-                <TextBlock Width="300" Height="100" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="5,0,0,0"/>
+                <Label FontSize="22" FontWeight="Black" Content="SO&amp;SO COMPANY" Margin="10,0,0,0"/>
+                <TextBlock Text="Some Sort of Tag Line" Width="300" Height="25" FontSize="17" FontWeight="Bold" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="18,-10,0,0" FontStyle="Italic"/>
+                <TextBlock Width="300" Height="90" HorizontalAlignment="Left" TextWrapping="Wrap" Margin="8,0,0,0"/>
             </StackPanel>
         </StackPanel>
     </Grid>
