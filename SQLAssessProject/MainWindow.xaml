@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SQLproject"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1600">
-    <Grid Background="#FFEEF5FF">
+    <Grid Background="#FFD7E0ED">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="3*"/>
@@ -104,10 +104,15 @@
             </Button.Foreground>
         </Button>
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="10,12,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" >
-            <Rectangle Width="150" Height="150" Margin="0,0,0,0" Fill="Red"/>
-            <Button Style="{DynamicResource ButtonStyle_Invis}" Cursor="Hand" Content="PLACEHOLDER" x:Name="button_company" Margin="-150,0,0,0" Width="150" Height="150" Click="button_company_Click" Background="#00DDDDDD" Foreground="Black" BorderBrush="#00000000"/>
+            <Rectangle Width="150" Height="150" Margin="0,0,0,0">
+                <Rectangle.Fill>
+                    <ImageBrush Stretch="Uniform" ImageSource="/images/aurora_logo.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Button Style="{DynamicResource ButtonStyle_Invis}" Cursor="Hand" x:Name="button_company" Margin="-150,0,0,0" Width="150" Height="150" Click="button_company_Click" Background="#00DDDDDD" Foreground="Black" BorderBrush="#00000000"/>
             <!--<Rectangle Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,15,0" Grid.Row="4" Stroke="Black" VerticalAlignment="Center" Width="130" Height="130" Fill="#FFA7C5E2"/>-->
-            <Label Content="SO&amp;SO COMPANY" FontWeight="Black" Margin="15,0,0,0" FontSize="22" Foreground="#FF03073E" VerticalAlignment="Center"/>
+            <Label Content="AURORA IT" FontWeight="Black" Margin="15,0,0,0" FontSize="22" Foreground="#FF03073E" VerticalAlignment="Center"/>
+            <Label Content="©" FontSize="18" FontWeight="Black" VerticalContentAlignment="Center" Margin="-10,0,0,6" Foreground="#FF03073E"/>
         </StackPanel>
     </Grid>
 </Window>

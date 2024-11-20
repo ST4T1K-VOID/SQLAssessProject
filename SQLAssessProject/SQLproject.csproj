@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Picture1.png" />
+    <None Remove="images\aurora_logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Picture1.png" />
+    <Resource Include="images\aurora_logo.png" />
   </ItemGroup>
 
 </Project>
